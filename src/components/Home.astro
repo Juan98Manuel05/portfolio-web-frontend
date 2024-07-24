@@ -1,0 +1,55 @@
+---
+import Button from './Button.astro'
+---
+
+<div class="flex vh-full justify-center bg-gradient">
+	<div class="col-6 align-center">
+		<div class="c-image">
+				<img class="avatar" src="/photo.jpg" alt="personal-photo">
+		</div>
+	<p class="tag">Welcome to <span class="text-gradient">my personal blog.</span></p>
+		<h1>Who I am?</h1>
+		<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus id debitis dolore officia nulla odit nisi fugit officiis accusamus, 
+				error obcaecati quos consequuntur doloribus, recusandae in labore natus architecto placeat!
+		</p>
+		<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus id debitis dolore officia nulla odit nisi fugit officiis accusamus, 
+				error obcaecati quos consequuntur doloribus.
+		</p>
+		<Button text="Learn More"/>
+	</div>
+	<div class="col-6 align-center">
+		<img src="/astronauta.png" alt="">
+	</div>
+</div>
+<style>
+/* gradient */
+.bg-gradient{
+	background: radial-gradient(ellipse at 76% 73%, #ffd34436 0%, transparent 20%, transparent 100%)
+}
+
+/* avatar */
+.c-image{
+	margin-bottom: 20px;
+}
+.avatar{
+	width: 80px;
+	border-radius: 100%;
+	border: 5px solid #ffd34436;
+	transition: 500ms;
+}
+.avatar:hover{
+	cursor: pointer;
+	border: 5px solid #ffd344;
+}
+
+.tag{
+	font-size: 12px;
+	margin: 0;
+	border: 1px solid white;
+	max-width: fit-content;
+	padding: 0px 10px;
+	border-radius: 20px;
+}
+</style>

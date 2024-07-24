@@ -1,0 +1,18 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "target": "esnext",                // Versión de ECMAScript a la que transpilar
+    "module": "esnext",                // Tipo de módulo, puede ser "commonjs", "esnext", etc.
+    "moduleResolution": "node",        // Cómo se resuelven los módulos
+    "strict": true,                    // Habilita todas las verificaciones estrictas
+    "esModuleInterop": true,           // Habilita interoperabilidad con módulos ES
+    "skipLibCheck": true,              // Omite la comprobación de tipos en archivos de definición de librerías
+    "forceConsistentCasingInFileNames": true, // Asegura nombres de archivos consistentes
+    "baseUrl": "./",                   // Base para resolver rutas de módulos
+    "paths": {
+      "@/*": ["src/*"]                 // Mapea las rutas de los módulos
+    },
+  }
+}
