@@ -2,12 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 import Home from '../components/Home.astro';
 import List from '../components/List/Knowledge.astro';
-
+import Preferences from '../components/Preferences.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="container">
+	<main>
 		<Home/>
 		<List/>
+		<Preferences/>
 	</main>
 </Layout>
+
+<style>
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+		background-size: 224px;
+		color: white;
+	}
+</style>

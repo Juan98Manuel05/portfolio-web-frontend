@@ -19,29 +19,37 @@ const fetchData = async (): Promise<List[]> => {
 // Llama a la función para obtener datos
 const data = await fetchData();
 --- 
+<div class="vh-20 bg-gradient">
+	<div class="flex h-100">
+		<div class="col-12">
+			<div class="logos h-100">
+				<div class="logos-slide">
+					{data.map((item) => (
+						<img src={item.image} alt={item.description} />
+					))}
+				</div>
+				<div class="logos-slide">
+					{data.map((item) => (
+						<img src={item.image} alt={item.description} />
+					))}
+				</div>
+				<div class="logos-slide">
+					{data.map((item) => (
+						<img src={item.image} alt={item.description} />
+					))}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-<div class="text-center opactity-medium"> 
-  <h3>knowledges</h3>
-</div>
-<div class="flex">
-  <div class="col-12">
-    <div class="logos">
-      <div class="logos-slide">
-        {data.map((item) => (
-          <img src={item.image} alt={item.description} />
-        ))}
-      </div>
-      <div class="logos-slide">
-        {data.map((item) => (
-          <img src={item.image} alt={item.description} />
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
 <style>
-  .astro{
-    width: 250px;
+
+  .h-100{
+    height: 100%;
+  }
+  .bg-gradient{
+    background-color:#232D3F;
   }
 
   @keyframes slide {
@@ -55,17 +63,18 @@ const data = await fetchData();
 
   .logos{
     overflow: hidden;
-    padding: 60px 0px;
-    background-color: #13151a;
+    background-color: transparent;
     white-space: nowrap;
     position: relative;
+    background-color:#232D3F;
+    align-content: center;
   }
 
   .logos::before,
   .logos::after{
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 350px;
     height: 100%;
     content: "";
     z-index: 2;
@@ -73,11 +82,11 @@ const data = await fetchData();
 
   .logos::before{
     left: 0;
-    background: linear-gradient(to left ,transparent, #13151a);
+    background: linear-gradient(to left ,transparent 10%, #13151a);
   }
   .logos::after{
     right: 0;
-    background: linear-gradient(to right ,transparent, #13151a);
+    background: linear-gradient(to right ,transparent 10%, #13151a);
   }
 
   .logos:hover .logos-slide{
