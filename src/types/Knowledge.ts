@@ -3,5 +3,6 @@ export interface List {
     knowledge: string
     category: string
     description: string,
-    image: string
+    image: string,
+    icon: string
 }
