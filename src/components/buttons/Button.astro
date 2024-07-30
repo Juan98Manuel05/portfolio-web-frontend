@@ -1,0 +1,24 @@
+---
+interface Props{
+    text: string
+}
+const { text } = Astro.props
+---
+
+<button>
+    {text}
+</button>
+<style>
+    button{
+        background: rgb(34, 32, 32);
+        color: white;
+        border: 5px solid transparent;
+        border-image: linear-gradient(45deg, var(--color-yellow),#ff8244) 20;
+        transition: 250ms;
+    }
+    button:hover{
+        box-shadow: 0px 0px 45px -10px var(--color-yellow);
+        border-radius: 0px;
+        transform: scale(1.05) rotate(-2deg);
+    }
+</style>
