@@ -1,7 +1,18 @@
+---
+import { FetchData } from "@/api/getResources"
+
+    FetchData
+---
+
 <div class="w-lg">
     <div class="container-section">
         <div class="container-title">
-            <h1>Favorite Programming Languages</h1>
+            <h1>
+                Favorites 
+                <astro-img>
+                    <img src="/star-regular.svg" class="star-regular">
+                </astro-img>
+            </h1>
         </div>
         <div class="flex">
             <div class="col-6">
@@ -16,6 +27,29 @@
         </div>
     </div>
 </div>
+
+<script>
+    class AstroHeart extends HTMLElement{
+        constructor(){
+            super();
+            const star = this.querySelector('img')
+
+            star?.addEventListener('click', () => {
+                if(star.classList.contains('star-regular')){
+                    star.setAttribute('src', '/star-solid.svg')
+                    star.classList.remove('star-regular')
+                    star.classList.add('star-solid')
+
+                }else{
+                    star.setAttribute('src', '/star-regular.svg')
+                    star.classList.remove('star-solid')
+                    star.classList.add('star-regular')
+                }
+            })
+        }
+    }
+    customElements.define('astro-img', AstroHeart)
+</script>
 
 <style>
     img{

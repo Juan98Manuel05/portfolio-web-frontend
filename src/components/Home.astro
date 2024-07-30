@@ -1,12 +1,13 @@
 ---
-import Button from './Button.astro'
+import Button from './buttons/Button.astro'
+
 ---
 <div class="flex w-lg justify-center bg-gradient vh-80">
 	<div class="col-6 align-center">
 		<div class="c-image">
-				<img class="avatar" src="/photo.jpg" alt="personal-photo">
+			<img class="avatar" src="/photo.jpg" alt="personal-photo">
 		</div>
-	<p class="tag">Welcome to <span class="text-gradient">my personal blog.</span></p>
+	<p class="tag">Manuel Camacho</p>
 		<h1>Who I am?</h1>
 		<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus id debitis dolore officia nulla odit nisi fugit officiis accusamus, 
@@ -42,6 +43,7 @@ import Button from './Button.astro'
 .tag{
 	font-size: 12px;
 	margin: 0;
+	margin-bottom: 15px;
 	border: 1px solid white;
 	max-width: fit-content;
 	padding: 0px 10px;
