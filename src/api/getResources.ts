@@ -9,14 +9,10 @@ export class FetchData {
     }
 
     async getKnowledges(route: string): Promise<List[]> {
-        return this.fetch(route, {})
+        return this.fetch(route)
     }
 
-    async getKnowledgesFavorites(route:string, params: {}): Promise<List[]> {
-        return this.fetch(route, params)
-    }
-
-    async fetch (route:string, params:{}): Promise<any[]> {
+    async fetch (route:string): Promise<any[]> {
         try {
             const response = await fetch(this.URL + route);
             if (!response.ok) {
