@@ -74,11 +74,7 @@ const { title } = Astro.props;
 		font-size: 64px;
 		font-family: 'Ubuntu', system-ui, sans-serif;
 	}
-	p{
-		font-size: 19px;
-		line-height: 1.7rem;
-		font-family: 'Arvo', system-ui, sans-serif;
-	}
+	
 	button{
 		border: 0;
 		padding: 18px 54px;
@@ -101,33 +97,15 @@ const { title } = Astro.props;
 	.vh-full{
 		height: 100vh;
 	}
-	.vh-80{
-		height: 80vh;
-	}
-	.vh-20{
-		height: 20vh;
-	}
 	.flex{
 		display: flex;
-		flex-wrap: wrap;
 	}
-	.flex-grid{
-		display: grid;
-    	grid-template-columns: repeat(2, 2fr);
-    	gap: 20px;
-	    grid-auto-rows: max-content;
-	}
+	
 	.justify-center{
 		justify-content: center;
 	}
 	.align-center{
 		align-content: center;
-	}
-	.col-12{
-		width: 100%;
-	}
-	.col-6{
-		width: 50%;
 	}
 
 	/* text */
@@ -148,9 +126,76 @@ const { title } = Astro.props;
 		height: 100%;
 	}
 
-	@media screen and (max-width: 1280px) {
+	@media screen and (min-width: 1440px) {
+		.flex-grid{
+			display: grid;
+			grid-template-columns: repeat(2, 2fr);
+			gap: 20px;
+			grid-auto-rows: max-content;
+		}
+		.vh-80{
+			height: 80vh;
+		}
+		.vh-20{
+			height: 20vh;
+		}
+		.col-12{
+			width: 100%;
+		}
+		.col-6{
+			width: 50%;
+		}
+		p{
+			font-size: 19px;
+			line-height: 1.7rem;
+			font-family: 'Arvo', system-ui, sans-serif;
+		}
+	}
+
+	@media screen and (max-width: 1440px) {
 		.w-lg{
 			margin: 0 60px;
 		}
+		.logos{
+			display: none;
+		}
 	}
+
+	@media screen and (max-width: 1024px) {
+		.flex-grid{
+			display: grid;
+			grid-template-columns: repeat(2, 2fr);
+			gap: 20px;
+			grid-auto-rows: max-content;
+		}
+	}
+
+	@media screen and (max-width: 425px) {
+		.vh-100{
+			height: auto;
+		}
+		.col-12{
+			width: 100% !important;
+		}
+		.w-lg{
+			margin: 0 30px;
+		}
+		.flex-grid{
+			display: grid;
+			grid-template-columns: repeat(1, 2fr);
+			gap: 20px;
+			grid-auto-rows: max-content;
+		}
+		h1{
+			font-size: 35px;
+			font-family: 'Ubuntu', system-ui, sans-serif;
+		}
+		p{
+			font-family: 18px;
+		}
+	}
+
+	
+
+	
 </style>
