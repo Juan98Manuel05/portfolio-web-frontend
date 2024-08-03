@@ -5,14 +5,15 @@ interface Props{
 const { text } = Astro.props
 ---
 
-<button class="font-bold md:mr-6">
+<button class="font-bold">
     {text}
 </button>
 <style>
     button{
-        background: var(--color-yellow);
-        color: black;
+        background: rgb(34, 32, 32);
+        color: white;
         border: 3px solid transparent;
+        border-image: linear-gradient(45deg, var(--color-yellow),#ff8244) 10;
         transition: 250ms;
     }
     button:hover{
