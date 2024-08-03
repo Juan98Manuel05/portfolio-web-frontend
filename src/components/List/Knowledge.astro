@@ -5,26 +5,12 @@ const result = new FetchData();
 const routeURL:string = '/knowledge/list'
 const data = await result.getKnowledges(routeURL)
 --- 
-<div class="vh-20 bg-gradient">
-	<div class="flex h-100">
-		<div class="col-12">
-			<div class="logos h-100">
-				<div class="logos-slide">
-					{data.map((item) => (
-						<img src={item.icon} alt={item.description} />
-					))}
-				</div>
-				<div class="logos-slide">
-					{data.map((item) => (
-						<img src={item.icon} alt={item.description} />
-					))}
-				</div>
-				<div class="logos-slide">
-					{data.map((item) => (
-						<img src={item.icon} alt={item.description} />
-					))}
-				</div>
-			</div>
+<div class="bg-gradient lg:min-h-20">
+	<div class="flex logos py-14">
+		<div class="logos-slide">
+			{data.map((item) => (
+				<img src={item.icon} alt={item.description} />
+			))}
 		</div>
 	</div>
 </div>
@@ -68,7 +54,7 @@ const data = await result.getKnowledges(routeURL)
   .logos::after{
     position: absolute;
     top: 0;
-    width: 350px;
+    width: 250px;
     height: 100%;
     content: "";
     z-index: 2;
@@ -88,7 +74,7 @@ const data = await result.getKnowledges(routeURL)
   }
 
   .logos-slide{
-    display: inline-block;
+    display: flex;
     animation: 45s slide infinite linear;
   }
 

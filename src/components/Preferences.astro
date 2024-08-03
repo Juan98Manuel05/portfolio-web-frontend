@@ -6,34 +6,32 @@ const routeURL:string = '/knowledge/list?favorite=true'
 const data = await result.getKnowledges(routeURL)
 ---
 
-<div class="w-lg">
-    <div class="container-section">
-        <div class="container-title">
-            <h1>
-                Favorites 
-                <astro-img>
-                    <img src="/star-regular.svg" class="star-regular">
-                </astro-img>
-            </h1>
-        </div>
-        <div class="flex-grid">
-            { data.map(({ icon, name, description, tags }) => (
-				<div class="card">
-					<div class="flex">
-						<div class="container-icon align-center">
-							<img src={ icon } alt={ icon }/>
-						</div>
-						<div class="container-name align-center">
-							<h2> { name } </h2>
-						</div>
-					</div>
-					<div class="container-text">
-						<p>{ description }</p>
-						<p>{ tags }</p>
-					</div>
-				</div>
-            ))}
-        </div>
+<div class="container mx-auto px-7 lg:px-10 lg:h-screen align-center">
+    <div class="py-8">
+        <h1 class="flex items-center font-bold text-5xl">
+            Favorites 
+            <astro-img class="px-8">
+                <img src="/star-regular.svg" class="star-regular">
+            </astro-img>
+        </h1>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        { data.map(({ icon, name, description, tags }) => (
+            <div class="card">
+                <div class="flex items-center pb-4">
+                    <div class="container-icon align-center">
+                        <img src={ icon } alt={ icon }/>
+                    </div>
+                    <div class="">
+                        <h2 class="font-bold text-2xl"> { name } </h2>
+                    </div>
+                </div>
+                <div class="container-text">
+                    <p class="pb-3">{ description }</p>
+                    <p>{ tags }</p>
+                </div>
+            </div>
+        ))}
     </div>
 </div>
 
@@ -77,7 +75,15 @@ const data = await result.getKnowledges(routeURL)
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra sutil */
         color: #fff; /* Color del texto */
+        transition: 250ms;
     }
+
+    .card:hover{
+        transform: scale(1.01);
+        cursor: pointer;
+        background-color: #f0c8623b;
+    }
+    
 	.container-icon{
 		padding: 0 20px 0 0;
 	}

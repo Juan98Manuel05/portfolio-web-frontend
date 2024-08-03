@@ -1,28 +1,53 @@
 ---
 import Button from './buttons/Button.astro'
+import Button2 from './buttons/Button2.astro'
 
 ---
-<div class="flex w-lg justify-center bg-gradient vh-80 vh-100">
-	<div class="col-6 col-12 align-center">
-		<div class="c-image">
-			<img class="avatar" src="/photo.jpg" alt="personal-photo">
+<div class="container mx-auto lg:h-screen place-content-center px-7 lg:px-10 py-10 gradient-custom">
+	<div class="flex flex-col-reverse lg:flex-row">
+		<div class="lg:w-2/3">
+			<div class="pt-6">
+				<img class="avatar" src="/photo.jpg" alt="personal-photo">
+			</div>
+			<div class="social-media flex py-4">
+				<img src="/linkedin-in-brands-solid.svg" alt="linkedin">
+				<img src="/github-brands-solid.svg" alt="github">
+			</div>
+		
+			<div class="info-personal pb-6">
+				<p class="text-lg font-normal">Juan Manuel Camacho</p>
+				<h1 class="text-2xl font-bold text-yellow-300">Full-Stack Developer</h1>
+				<h1 class="text-lg font-bold">Ingeniero Informatico - Desarrollador de Software</h1>
+			</div>
+			
+			<div class=" pb-8">
+				<p class="font-thin text-lg md:text-xl ">
+					Me apasiona el mundo de la tecnología. Soy <span class="font-bold">Desarrollador de Software</span>. Desde que conocí este mundo, 
+					me he apasionado cada vez más por este vasto universo tecnológico. Cuento ya con más de 5 años de experiencia, 
+					en los que he colaborado en diversos proyectos, ofreciendo soluciones personalizadas para distintas empresas. 
+					A lo largo de mi trayectoria, he trabajado con varias tecnologías web. Me enfoco en la calidad de mi trabajo; 
+					<span class="font-bold">No me gustan las cosas a medias.</span>
+				</p>
+				<div class="mt-5">
+					<p class="text-xs text-yellow-50">
+						*Si se preguntan porque la tematica de astronauta, porque soy soñador, me gusta ir por lo grande descubrir nuevas cosas, aprender, siempre con las ganas
+						de seguir aprendiendo de este mundo tan maravilloso.
+					</p>
+				</div>
+				
+			</div>
+
+			<div class="flex flex-col md:flex-row">
+				<Button text="Continuar"/>
+				<Button2 text="Mas sobre mi"/>
+			</div>
 		</div>
-	<p class="tag">Manuel Camacho</p>
-		<h1 class="title">Who I am?</h1>
-		<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus id debitis dolore officia nulla odit nisi fugit officiis accusamus, 
-				error obcaecati quos consequuntur doloribus, recusandae in labore natus architecto placeat!
-		</p>
-		<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus id debitis dolore officia nulla odit nisi fugit officiis accusamus, 
-				error obcaecati quos consequuntur doloribus.
-		</p>
-		<Button text="Learn More"/>
-	</div>
-	<div class="col-6 align-center container-image-astro">
-		<img src="/astronauta.png" alt="">
+		<div class="w-1/2 lg:w-1/2 py-5 hidden lg:block">
+			<img src="/astronauta.png" alt="">
+		</div>
 	</div>
 </div>
+
 <style>
 	/* avatar */
 	.c-image{
@@ -40,9 +65,7 @@ import Button from './buttons/Button.astro'
 	}
 
 	.tag{
-		font-size: 12px;
-		margin: 0;
-		margin-bottom: 15px;
+		font-size: 18px;
 		border: 1px solid white;
 		max-width: fit-content;
 		padding: 0px 10px;
@@ -51,10 +74,20 @@ import Button from './buttons/Button.astro'
 	.title{
 		padding: 1rem 0;
 	}
-
-	@media screen and (max-width: 1024px) {
-		.container-image-astro{
-			display: none;
-		}
+	.gradient-custom{
+		/* background: 
+			radial-gradient(circle at -10% -30%, rgba(255, 177, 68, 0.849) 0%, rgba(255, 221, 68, 0.781) 1%, rgba(255,211,68,0) 30%,  transparent 50%, transparent 100%),
+			radial-gradient(circle at 110% 120%, rgba(255, 177, 68, 0.849) 0%, rgba(255, 221, 68, 0.616) 1%, rgba(255,211,68,0) 20%,  transparent 50%, transparent 100%); */
 	}
+
+	.social-media img{
+		width: 24px;
+		margin-right: 20px;
+		transition: 500ms;
+	}
+
+	.social-media img:hover{
+		transform: scale(1.2);
+	}
+	
 </style>
